@@ -1,3 +1,3 @@
-class Saab
+class Saab < ActiveRecord::Base
 
 end
