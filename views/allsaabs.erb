@@ -11,8 +11,14 @@
   <input type="text" name="year">
   <input type="submit" value="save">
 </form>
-</br>
+<h3> or.. </h3>
+<form action="/allsaabs" method="post">
+  <label> id to delete </label>
+  <input type="text" name="deleted">
+  <input type="submit" value="save">
+</form>
 
+</br>
 <h3>| list of current saabs |</h3>
 
 <% @view.each do |car| %>
@@ -23,3 +29,5 @@
 <% end %>
 
 </body>
+
+
