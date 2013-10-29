@@ -1,0 +1,118 @@
+Last login: Mon Oct 28 15:25:19 on ttys003
+vanessa-pynes-macbook-pro-4:thing-o-vanessapyne vipyne$ psql
+psql (9.3.1)
+Type "help" for help.
+
+vipyne=# /l
+vipyne-# \l
+                               List of databases
+   Name    | Owner  | Encoding |   Collate   |    Ctype    | Access privileges 
+-----------+--------+----------+-------------+-------------+-------------------
+ postgres  | vipyne | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ saab      | vipyne | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0 | vipyne | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/vipyne        +
+           |        |          |             |             | vipyne=CTc/vipyne
+ template1 | vipyne | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/vipyne        +
+           |        |          |             |             | vipyne=CTc/vipyne
+ vipyne    | vipyne | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+(5 rows)
+
+vipyne-# \d
+No relations found.
+vipyne-# \c saab
+You are now connected to database "saab" as user "vipyne".
+saab-# \d
+               List of relations
+ Schema |       Name        |   Type   | Owner  
+--------+-------------------+----------+--------
+ public | saabs             | table    | vipyne
+ public | saabs_id_seq      | sequence | vipyne
+ public | schema_migrations | table    | vipyne
+(3 rows)
+
+saab-# \d saabs
+                                     Table "public.saabs"
+   Column   |            Type             |                     Modifiers                      
+------------+-----------------------------+----------------------------------------------------
+ id         | integer                     | not null default nextval('saabs_id_seq'::regclass)
+ model      | character varying(255)      | 
+ color      | character varying(255)      | 
+ make_year  | date                        | 
+ created_at | timestamp without time zone | 
+ updated_at | timestamp without time zone | 
+Indexes:
+    "saabs_pkey" PRIMARY KEY, btree (id)
+
+saab-# \d+ saabs
+                                                         Table "public.saabs"
+   Column   |            Type             |                     Modifiers                      | Storage  | Stats target | Description 
+------------+-----------------------------+----------------------------------------------------+----------+--------------+-------------
+ id         | integer                     | not null default nextval('saabs_id_seq'::regclass) | plain    |              | 
+ model      | character varying(255)      |                                                    | extended |              | 
+ color      | character varying(255)      |                                                    | extended |              | 
+ make_year  | date                        |                                                    | plain    |              | 
+ created_at | timestamp without time zone |                                                    | plain    |              | 
+ updated_at | timestamp without time zone |                                                    | plain    |              | 
+Indexes:
+    "saabs_pkey" PRIMARY KEY, btree (id)
+Has OIDs: no
+
+saab-# help
+saab-# help
+saab-# \?
+General
+  \copyright             show PostgreSQL usage and distribution terms
+  \g [FILE] or ;         execute query (and send results to file or |pipe)
+  \gset [PREFIX]         execute query and store results in psql variables
+  \h [NAME]              help on syntax of SQL commands, * for all commands
+  \q                     quit psql
+  \watch [SEC]           execute query every SEC seconds
+
+Query Buffer
+  \e [FILE] [LINE]       edit the query buffer (or file) with external editor
+  \ef [FUNCNAME [LINE]]  edit function definition with external editor
+  \p                     show the contents of the query buffer
+  \r                     reset (clear) the query buffer
+  \s [FILE]              display history or save it to file
+  \w FILE                write query buffer to file
+
+Input/Output
+  \copy ...              perform SQL COPY with data stream to the client host
+  \echo [STRING]         write string to standard output
+  \i FILE                execute commands from file
+  \ir FILE               as \i, but relative to location of current script
+  \o [FILE]              send all query results to file or |pipe
+  \qecho [STRING]        write string to query output stream (see \o)
+
+Informational
+  (options: S = show system objects, + = additional detail)
+  \d[S+]                 list tables, views, and sequences
+  \d[S+]  NAME           describe table, view, sequence, or index
+  \da[S]  [PATTERN]      list aggregates
+  \db[+]  [PATTERN]      list tablespaces
+  \dc[S+] [PATTERN]      list conversions
+  \dC[+]  [PATTERN]      list casts
+  \dd[S]  [PATTERN]      show object descriptions not displayed elsewhere
+  \ddp    [PATTERN]      list default privileges
+  \dD[S+] [PATTERN]      list domains
+  \det[+] [PATTERN]      list foreign tables
+  \des[+] [PATTERN]      list foreign servers
+  \deu[+] [PATTERN]      list user mappings
+  \dew[+] [PATTERN]      list foreign-data wrappers
+  \df[antw][S+] [PATRN]  list [only agg/normal/trigger/window] functions
+  \dF[+]  [PATTERN]      list text search configurations
+  \dFd[+] [PATTERN]      list text search dictionaries
+  \dFp[+] [PATTERN]      list text search parsers
+  \dFt[+] [PATTERN]      list text search templates
+  \dg[+]  [PATTERN]      list roles
+  \di[S+] [PATTERN]      list indexes
+  \dl                    list large objects, same as \lo_list
+  \dL[S+] [PATTERN]      list procedural languages
+  \dm[S+] [PATTERN]      list materialized views
+  \dn[S+] [PATTERN]      list schemas
+  \do[S]  [PATTERN]      list operators
+  \dO[S+] [PATTERN]      list collations
+  \dp     [PATTERN]      list table, view, and sequence access privileges
+saab-# q
+saab-# \q
+vanessa-pynes-macbook-pro-4:thing-o-vanessapyne vipyne$ 
