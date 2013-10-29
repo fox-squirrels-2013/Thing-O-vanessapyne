@@ -1,1 +1,21 @@
- <%= "#{@saab1.id} rocks" %>
+
+ </br>
+<h2>tell me about your saab...</h2>
+ <form action="/allsaabs" method='post'>
+  <label> model </label>
+  <input type="text" name="model">
+  <label> color </label>
+  <input type="text" name="color">
+  <label> year </label>
+  <input type="text" name="year">
+  <input type="submit" value="save">
+</form>
+</br>
+
+<h3>| list of current saabs |</h3>
+
+<% @view.each do |car| %>
+<p><%= "make: #{car.model},".center(30) + 
+"| color: #{car.color}".center(30) +
+"| year: #{car.make_year} ||".center(33)%></p>
+<% end %>

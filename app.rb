@@ -11,9 +11,20 @@ get '/' do
 end
 
 get '/allsaabs' do
-  @saab1 = Saab.first
+  @model = params[:model]
+  @color = params[:color]
+  @year = params[:year]
+  Saab.create(model: @model, color: @color, make_year: @year)
+  # @view = Saab.all
+  erb :allsaabs
+end
+
+post '/allsaabs' do
+  puts params
+  @view = Saab.all
   erb :allsaabs
 end
 
 # erb is a method 
 # self.methods.sort
+
