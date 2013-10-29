@@ -2,7 +2,7 @@
   <body background="http://www.cartype.com/pics/7291/full/saab_95_prototype_60.jpg">
  </br>
 <h2>tell me about your saab...</h2>
- <form action="/allsaabs" method='post'>
+ <form action="/allsaabs" method="post">
   <label> model </label>
   <input type="text" name="model">
   <label> color </label>
@@ -19,7 +19,7 @@
 <p><%= "|| #{car.id} - ".center(5) +
 "make: #{car.model},".center(30) + 
 "| color: #{car.color}".center(30) +
-"| year: #{car.make_year} ||".center(33)%></p>
+"| year: #{car.year} ||".center(33)%></p>
 <% end %>
 
 </body>

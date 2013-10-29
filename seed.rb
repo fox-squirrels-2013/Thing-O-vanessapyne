@@ -5,7 +5,7 @@ require_relative './models/saab.rb'
 ActiveRecord::Base.establish_connection(adapter: 'postgresql',
   database: 'saab' )
 
-Saab.create(model: "900", color: "white", make_year: "1994")
+Saab.create(model: "900", color: "white", year: "1994")
 
 
 10.times do |i|

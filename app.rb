@@ -10,17 +10,18 @@ get '/' do
   erb :index
 end
 
+
+
 get '/allsaabs' do
-  @model = params[:model]
-  @color = params[:color]
-  @year = params[:year]
-  Saab.create(model: @model, color: @color, make_year: @year)
-  # @view = Saab.all
   erb :allsaabs
 end
 
 post '/allsaabs' do
   puts params
+  @model = params[:model]
+  @color = params[:color]
+  @year = params[:year]
+  Saab.create(model: @model, color: @color, year: @year)
   @view = Saab.all
   erb :allsaabs
 end

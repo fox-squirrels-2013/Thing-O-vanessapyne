@@ -19,7 +19,7 @@ namespace :db do
 end
 
 # desc "generate new migration file"
-# task :generatemigrate do
+# task :genmifi do
 #   timestamp = Time.now.strftime('%Y%m%d%H%M%S')
 #   exec "touch db/migrate/#{timestamp}_#{ARGV.last}.rb"
 # end
