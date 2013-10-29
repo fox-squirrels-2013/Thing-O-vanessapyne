@@ -1,0 +1,2 @@
+new migration file to change date/year
+delete all objects with nil in them
