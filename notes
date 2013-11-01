@@ -1,0 +1,22 @@
+blah = Saab.all
+
+blah.each do |x|
+  flat = x.attributes.flatten
+  if flat.include?(nil)
+  x.destroy
+  end
+  end
+
+
+<% @view.each do |car| %>
+<p><%= "|| #{car.id} - ".center(5) +
+"make: #{car.model},".center(30) + 
+"| color: #{car.color}".center(30) +
+"| year: #{car.year} ||".center(33)%></p>
+<% end %>
+
+
+
+ # if params[:deleted]
+  #   Saab.find(params[:deleted]).destroy
+  # else
